@@ -19,7 +19,7 @@
         });
 
         msg = createMeetingClientMessage('application.context.getUser', {'appsContextTime':0,'sdkInitializationTime':0})
-        console.log('posting'+JSON.stringify(msg))
+        console.log(application.context.getUser)
         //msg = createMeetingClientMessage('application.endSession', {'appsContextTime':0,'sdkInitializationTime':0})
 
         window.parent.postMessage(JSON.stringify(msg), '*');
@@ -27,7 +27,7 @@
         window.parent.parent.parent.postMessage(JSON.stringify(msg), '*');
 
         msg = createMeetingClientMessage('application.context.getMeeting', {'appsContextTime':0,'sdkInitializationTime':0})
-        console.log(JSON.stringify(msg))
+        console.log(application.context.getMeeting)
 
         window.parent.postMessage(JSON.stringify(msg), '*');
         window.parent.parent.postMessage(JSON.stringify(msg), '*');
