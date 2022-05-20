@@ -18,14 +18,16 @@
             console.log(`Received message: ${event.data}`);
         });
 
-        //msg = createMeetingClientMessage('application.context.getUser', {'appsContextTime':0,'sdkInitializationTime':0})
-        msg = createMeetingClientMessage('application.endSession', {'appsContextTime':0,'sdkInitializationTime':0})
+        msg = createMeetingClientMessage('application.context.getUser', {'appsContextTime':0,'sdkInitializationTime':0})
+        console.log('posting'+JSON.stringify(msg))
+        //msg = createMeetingClientMessage('application.endSession', {'appsContextTime':0,'sdkInitializationTime':0})
 
         window.parent.postMessage(JSON.stringify(msg), '*');
         window.parent.parent.postMessage(JSON.stringify(msg), '*');
         window.parent.parent.parent.postMessage(JSON.stringify(msg), '*');
 
         msg = createMeetingClientMessage('application.context.getMeeting', {'appsContextTime':0,'sdkInitializationTime':0})
+        console.log(JSON.stringify(msg))
 
         window.parent.postMessage(JSON.stringify(msg), '*');
         window.parent.parent.postMessage(JSON.stringify(msg), '*');
